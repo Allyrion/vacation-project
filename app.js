@@ -1,6 +1,7 @@
 const express = require("express");
 const {engine} = require('express-handlebars');
 const generalController = require("./controllers/GeneralController")
+const userController = require("./controllers/UserController")
 
 
 //Create Express App Object
@@ -14,8 +15,12 @@ app.set('views', './views');
 
 app.use(express.static('public'))
 
+//Tells express to interpret form data
+app.use(express.urlencoded({extended:true}));
+
 
 app.use("/", generalController);
+app.use("/users", userController);
 
 
 const PORT = 3000;
