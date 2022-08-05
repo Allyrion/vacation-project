@@ -3,7 +3,6 @@ const {engine} = require('express-handlebars');
 const generalController = require("./controllers/GeneralController")
 const userController = require("./controllers/UserController")
 
-
 //Create Express App Object
 const app = express();
 
